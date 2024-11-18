@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1057</width>
+    <height>628</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Beautiful Text Editor</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1000</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string>QTextEdit { font-size: 14pt; padding: 10px; border: 1px solid #ccc; background-color: #f5f5f5; }</string>
+    </property>
+    <property name="placeholderText">
+     <string>Start typing your text here...</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1057</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionPaste"/>
+    <addaction name="actionClear"/>
+    <addaction name="actionReplace"/>
+    <addaction name="actionDataRecovery"/>
+   </widget>
+   <widget class="QMenu" name="menuFormat">
+    <property name="title">
+     <string>Format</string>
+    </property>
+    <addaction name="actionBold"/>
+    <addaction name="actionItalic"/>
+    <addaction name="actionUnderline"/>
+    <addaction name="actionSelectFont"/>
+   </widget>
+   <widget class="QMenu" name="menuTable">
+    <property name="title">
+     <string>Table</string>
+    </property>
+    <addaction name="actionInsertTable"/>
+    <addaction name="actionAddRow"/>
+    <addaction name="actionRemoveRow"/>
+    <addaction name="actionAddColumn"/>
+    <addaction name="actionRemoveColumn"/>
+   </widget>
+   <widget class="QMenu" name="menuFont">
+    <property name="title">
+     <string>Font</string>
+    </property>
+    <addaction name="actionSelectFont"/>
+    <addaction name="actionfontColor"/>
+   </widget>
+   <widget class="QMenu" name="menuGraphics_window">
+    <property name="title">
+     <string>Graphics window</string>
+    </property>
+    <addaction name="actionNew_2"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuFormat"/>
+   <addaction name="menuFont"/>
+   <addaction name="menuTable"/>
+   <addaction name="menuGraphics_window"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="actionOpen"/>
+   <addaction name="actionSave"/>
+   <addaction name="separator"/>
+   <addaction name="actionBold"/>
+   <addaction name="actionItalic"/>
+   <addaction name="actionUnderline"/>
+   <addaction name="actionSelectFont"/>
+   <addaction name="actionfontColor"/>
+   <addaction name="separator"/>
+   <addaction name="actionFind"/>
+   <addaction name="actionCopy"/>
+   <addaction name="actionPaste"/>
+   <addaction name="actionClear"/>
+   <addaction name="actionDataRecovery"/>
+   <addaction name="separator"/>
+   <addaction name="actionRedo"/>
+   <addaction name="actionUndo"/>
+   <addaction name="separator"/>
+   <addaction name="actionInsertTable"/>
+   <addaction name="actionAddRow"/>
+   <addaction name="actionRemoveRow"/>
+   <addaction name="actionAddColumn"/>
+   <addaction name="actionRemoveColumn"/>
+   <addaction name="separator"/>
+  </widget>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/new-document.png</normaloff>:/toolbar/new-document.png</iconset>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/open-folder-with-document.png</normaloff>:/toolbar/open-folder-with-document.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/save.png</normaloff>:/toolbar/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/logout.png</normaloff>:/toolbar/logout.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Ё</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/undo.png</normaloff>:/toolbar/undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/redo.png</normaloff>:/toolbar/redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Redo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/copy.png</normaloff>:/toolbar/copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/paste.png</normaloff>:/toolbar/paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Paste</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/broom.png</normaloff>:/toolbar/broom.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Del</string>
+   </property>
+  </action>
+  <action name="actionBold">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/bold-text.png</normaloff>:/toolbar/bold-text.png</iconset>
+   </property>
+   <property name="text">
+    <string>Bold</string>
+   </property>
+   <property name="iconText">
+    <string>B</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionUnderline">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/underline.png</normaloff>:/toolbar/underline.png</iconset>
+   </property>
+   <property name="text">
+    <string>Underline</string>
+   </property>
+   <property name="iconText">
+    <string>U</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+     <underline>true</underline>
+    </font>
+   </property>
+  </action>
+  <action name="actionItalic">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/italic-font.png</normaloff>:/toolbar/italic-font.png</iconset>
+   </property>
+   <property name="text">
+    <string>Italic</string>
+   </property>
+   <property name="iconText">
+    <string>I</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>14</pointsize>
+     <italic>true</italic>
+    </font>
+   </property>
+  </action>
+  <action name="actionSelectFont">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/font.png</normaloff>:/toolbar/font.png</iconset>
+   </property>
+   <property name="text">
+    <string>Select Font</string>
+   </property>
+  </action>
+  <action name="actionFind">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/search.png</normaloff>:/toolbar/search.png</iconset>
+   </property>
+   <property name="text">
+    <string>Find</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionReplace">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/replace.png</normaloff>:/toolbar/replace.png</iconset>
+   </property>
+   <property name="text">
+    <string>Replace</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionInsertTable">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/cells.png</normaloff>:/toolbar/cells.png</iconset>
+   </property>
+   <property name="text">
+    <string>InsertTable</string>
+   </property>
+   <property name="toolTip">
+    <string>InsertTable</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionAddRow">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/row.png</normaloff>:/toolbar/row.png</iconset>
+   </property>
+   <property name="text">
+    <string>AddRow</string>
+   </property>
+   <property name="toolTip">
+    <string>AddRow</string>
+   </property>
+  </action>
+  <action name="actionAddColumn">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/add-column.png</normaloff>:/toolbar/add-column.png</iconset>
+   </property>
+   <property name="text">
+    <string>AddColumn</string>
+   </property>
+   <property name="toolTip">
+    <string>AddColumn</string>
+   </property>
+  </action>
+  <action name="actionRemoveRow">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/del-row.png</normaloff>:/toolbar/del-row.png</iconset>
+   </property>
+   <property name="text">
+    <string>RemoveRow</string>
+   </property>
+   <property name="toolTip">
+    <string>Remove Row</string>
+   </property>
+  </action>
+  <action name="actionRemoveColumn">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/delete-column.png</normaloff>:/toolbar/delete-column.png</iconset>
+   </property>
+   <property name="text">
+    <string>RemoveColumn</string>
+   </property>
+   <property name="toolTip">
+    <string>Remove Row</string>
+   </property>
+  </action>
+  <action name="actionfontColor">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/font (1).png</normaloff>:/toolbar/font (1).png</iconset>
+   </property>
+   <property name="text">
+    <string>fontColor</string>
+   </property>
+  </action>
+  <action name="actionDataRecovery">
+   <property name="icon">
+    <iconset resource="icons/toolbar/toolbar.qrc">
+     <normaloff>:/toolbar/recovery.png</normaloff>:/toolbar/recovery.png</iconset>
+   </property>
+   <property name="text">
+    <string>Recovery</string>
+   </property>
+  </action>
+  <action name="actionNew_2">
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="icons/toolbar/toolbar.qrc"/>
+ </resources>
+ <connections/>
+</ui>
